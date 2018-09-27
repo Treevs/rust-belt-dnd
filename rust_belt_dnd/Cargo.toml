@@ -1,0 +1,6 @@
+[package]
+name = "rust_belt_dnd"
+version = "0.1.0"
+authors = ["Trevor Wilson <wilsontp14@uww.edu>"]
+
+[dependencies]
