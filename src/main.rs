@@ -7,7 +7,6 @@ fn help() {
    println!("TODO: Put help text");
 }
 
-// fn roll<'a> (dice: &'a String) -> Vec<&'a i32>{
 fn roll (dice: String) -> Vec<i32>{
    
    let mut rng = thread_rng();
@@ -34,31 +33,31 @@ fn print_roll(dice: String) {
 }
 
 fn main() {
-   let args: Vec<String> = env::args().collect();
-   match args.len() {
+    let args: Vec<String> = env::args().collect();
+    match args.len() {
        // no arguments passed
-       1 => {
-           println!("Try passing some arguments!");
-       },
-       // one argument passed
-       2 => {
-           match args[1].as_ref() {
-               "d20" => println!("40"),
-               _ => println!("Error"),
-           }
-       },
-       // two argument passed
-       3 => {
-           match args[1].as_ref() {
-               "roll" => print_roll(args[2].to_string()),
-               _ => println!("Error"),
-           }
-       },
-       // all the other cases
-       _ => {
-           // show a help message
-           help();
-       }
-   }
-
+        1 => {
+            println!("Try passing two arguments!");
+        },
+        // one argument passed
+        2 => {
+            println!("Try passing two arguments!");
+            // match args[1].as_ref() {
+            //     "d20" => println!("40"),
+            //     _ => println!("Error"),
+            // }
+        },
+        // two argument passed
+        3 => {
+            match args[1].as_ref() {
+                "roll" => print_roll(args[2].to_string()),
+                _ => println!("Error"),
+            }
+        },
+        // all the other cases
+        _ => {
+            // show a help message
+            help();
+        }
+    }
 }
