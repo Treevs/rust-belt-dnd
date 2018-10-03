@@ -13,7 +13,10 @@ fn roll (dice: String) -> Vec<i32>{
 
     let split = dice.split("d");
     let vec: Vec<&str> = split.collect::<Vec<&str>>();
-    let num_rolls: i32 = vec[0].parse::<i32>().unwrap();
+    let mut num_rolls: i32 = 1;
+    if vec[0] != "" {
+        num_rolls = vec[0].parse::<i32>().unwrap();
+    }
     let sides = vec[1].parse::<i32>().unwrap();
     let mut rolls = Vec::new();
 
