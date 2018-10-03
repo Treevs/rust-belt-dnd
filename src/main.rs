@@ -2,9 +2,9 @@ extern crate rand;
 use std::env;
 use rand::prelude::*;
 
-
+//TODO: Make this less... bad.
 fn help() {
-   println!("TODO: Put help text");
+   println!("Type `roll d20` to roll a 20 sided die. Type `roll 3d100` to roll 3 100 sided dice");
 }
 
 fn roll (dice: String) -> Vec<i32>{
@@ -40,15 +40,14 @@ fn main() {
     match args.len() {
        // no arguments passed
         1 => {
-            println!("Try passing two arguments!");
+            help();
         },
         // one argument passed
         2 => {
-            println!("Try passing two arguments!");
-            // match args[1].as_ref() {
-            //     "d20" => println!("40"),
-            //     _ => println!("Error"),
-            // }
+            match args[1].as_ref() {
+                "help" => help(),
+                _ => println!("Try passing two arguments!"),
+            }
         },
         // two argument passed
         3 => {
